@@ -60,10 +60,6 @@ bool showOnDevice(const SettingInfo& setting) {
   // Touch boards act on the text directly; the X4 Pro home key and the
   // short power click on other touch boards carry the remaining shortcuts.
   if (BoardConfig::hasTouch() && setting.valuePtr == &CrossPointSettings::longPressMenuFunction) return false;
-  if (setting.valuePtr == &CrossPointSettings::pwrBtnFootnoteBack &&
-      SETTINGS.shortPwrBtn != CrossPointSettings::SHORT_PWRBTN::FOOTNOTES) {
-    return false;
-  }
   return true;
 }
 
